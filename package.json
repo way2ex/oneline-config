@@ -1,0 +1,55 @@
+{
+    "name": "oneline-config",
+    "version": "0.0.1",
+    "private": false,
+    "description": "CLI to generate config files for tools in one line command",
+    "keywords": [
+        "config",
+        "CLI",
+        "command line"
+    ],
+    "license": "MIT",
+    "files": [
+        "bin",
+        "dist",
+        "src"
+    ],
+    "bin": {
+        "oneline-config": "./bin/index.js"
+    },
+    "main": "index.js",
+    "scripts": {
+        "start": "tsc --watch",
+        "build": "tsc",
+        "lint": "eslint . --ext .ts"
+    },
+    "homepage": "",
+    "bugs": "",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "author": {
+        "name": "Justin Zhu",
+        "email": "vac872089248@gmail.com"
+    },
+    "dependencies": {
+        "commander": "^9.4.0",
+        "inquirer": "^9.1.0",
+        "typescript": "^4.7.4"
+    },
+    "devDependencies": {
+        "@types/inquirer": "^9.0.0",
+        "@types/node": "^14.14.6",
+        "@typescript-eslint/eslint-plugin": "^5.33.0",
+        "@typescript-eslint/parser": "^5.33.0",
+        "eslint": "^8.22.0",
+        "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-promise": "^6.0.0",
+        "prettier": "^2.7.1"
+    },
+    "engines": {
+        "node": ">10.17.0"
+    }
+}

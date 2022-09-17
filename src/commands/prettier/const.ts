@@ -6,15 +6,15 @@ export const TYPES = {
   CONFIG_JS: "prettier.config.js",
   RC_JS: ".prettierrc.js",
   TOML: ".prettierrc.toml",
-} as const
+} as const;
 
-export type Valueof<T extends Record<string, unknown>> = T[keyof T]
-export type ConfigFileType = Valueof<typeof TYPES>
+export type Valueof<T extends Record<string, unknown>> = T[keyof T];
+export type ConfigFileType = Valueof<typeof TYPES>;
 export const PACKAGE_MANAGER_INSTALL_COMMAND_MAP = {
   yarn: `yarn add prettier --ignore-workspace-root-check --dev`,
   pnpm: `pnpm add --save-dev prettier`,
   npm: `npm install prettier --save-dev`,
-}
+};
 export const prettierIgnoreContent = `# Logs
 logs
 *.log
@@ -40,4 +40,4 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-`
+`;

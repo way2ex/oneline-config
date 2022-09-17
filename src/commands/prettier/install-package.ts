@@ -8,8 +8,15 @@ export async function installPackage(pkgManager: keyof typeof PACKAGE_MANAGER_IN
   if (pkgManager === "pnpm" && fs.existsSync(resolvePath("pnpm-workspace.yaml"))) {
     installCmd.push("--workspace-root");
   }
-  await execa(installCmd[0], installCmd.slice(1), {
+  const p = execa(installCmd[0], installCmd.slice(1), {
     stdio: "inherit",
   });
-  logger.success("Install prettier successfully.");
+  p.on("close", function (code) {
+    if (code === 0) {
+      logger.success("Install prettier successfully.");
+    }
+  });
+  process.once("SIGINT", function () {
+    p.kill();
+  });
 }
